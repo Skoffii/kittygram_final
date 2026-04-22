@@ -24,7 +24,7 @@ jobs:
           pip install ruff==0.8.0
           pip install -r ./backend/requirements.txt
       
-      - name: name: Lint with ruff and run django tests
+      - name: Lint with ruff and run django tests
 
         env:
           POSTGRES_DB=kittygram
