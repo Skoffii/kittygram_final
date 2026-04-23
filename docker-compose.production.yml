@@ -13,22 +13,26 @@ services:
     env_file: .env
 
   backend:
-    build: ./backend/
+    image: sofikash/kittygram_final-backend:latest
     env_file: .env
     volumes:
       - static:/backend_static
+      - media:/app/media
+    depends_on:
+      - db
   frontend:
+    image: sofikash/kittygram_final-frontend:latest 
     env_file: .env
-    build: ./frontend/
-    command: cp -r /app/build/. /frontend_static/
     volumes:
       - static:/frontend_static
+    command: cp -r /app/build/. /frontend_static/ 
   gateway:
-    build: ./nginx/
+    image: sofikash/kittygram_final-gateway:latest
     env_file: .env
     ports:
-    #было 9000:80
       - 8000:80
     volumes:
       - static:/staticfiles/
-      - ./media:/app/media
+      - media:/app/media
+    depends_on:
+      - backend

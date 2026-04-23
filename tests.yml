@@ -1,0 +1,4 @@
+repo_owner: Skoffii         # твой GitHub-логин
+kittygram_domain: https://localhost:8000/   # ссылка на деплой Kittygram
+taski_domain: https://localhost:8000/           # ссылка на деплой Taski
+dockerhub_username: sofikash  # твой Docker Hub логин
