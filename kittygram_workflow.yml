@@ -56,7 +56,7 @@ jobs:
         npm ci
     - name: Test frontend
       run: |
-        cd frontend/
+        cd tests/
         npm run test
 
   build_and_push_to_docker_hub:
